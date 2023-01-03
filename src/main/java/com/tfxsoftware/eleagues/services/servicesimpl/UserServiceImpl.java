@@ -1,5 +1,7 @@
 package com.tfxsoftware.eleagues.services.servicesimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +23,9 @@ public class UserServiceImpl implements UserService{
         user.setSeasonScore(0);
         user.setBalance(1000);
         return userRepository.save(user);
+    }
+
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
     }
 }
